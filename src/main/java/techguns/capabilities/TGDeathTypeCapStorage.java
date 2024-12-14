@@ -8,14 +8,12 @@ import net.minecraftforge.common.capabilities.Capability.IStorage;
 
 public class TGDeathTypeCapStorage implements IStorage<TGDeathTypeCap> {
 
-	@Override
-	public NBTBase writeNBT(Capability<TGDeathTypeCap> capability, TGDeathTypeCap instance, EnumFacing side) {
-		final NBTTagCompound tags = new NBTTagCompound();
-		return tags;
-	}
+    @Override
+    public NBTBase writeNBT(Capability<TGDeathTypeCap> capability, TGDeathTypeCap instance, EnumFacing side) {
+        final NBTTagCompound tags = new NBTTagCompound();
+        return tags;
+    }
 
-	@Override
-	public void readNBT(Capability<TGDeathTypeCap> capability, TGDeathTypeCap instance, EnumFacing side, NBTBase nbt) {
-	}
-	
+    @Override
+    public void readNBT(Capability<TGDeathTypeCap> capability, TGDeathTypeCap instance, EnumFacing side, NBTBase nbt) {}
 }

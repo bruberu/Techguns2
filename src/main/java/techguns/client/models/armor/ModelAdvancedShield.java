@@ -5,6 +5,7 @@ import net.minecraft.client.model.ModelRenderer;
 import net.minecraft.entity.Entity;
 
 public class ModelAdvancedShield extends ModelBase {
+
     public ModelRenderer Plate;
     public ModelRenderer Handle;
     public ModelRenderer TopBorder;
@@ -56,7 +57,7 @@ public class ModelAdvancedShield extends ModelBase {
     }
 
     @Override
-    public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) { 
+    public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
         this.SideBorder0.render(f5);
         this.BottomBorder.render(f5);
         this.Glass.render(f5);

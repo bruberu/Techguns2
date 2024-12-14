@@ -3,10 +3,12 @@ package techguns.client.models.guns;
 import net.minecraft.client.model.ModelRenderer;
 import net.minecraft.client.renderer.block.model.ItemCameraTransforms.TransformType;
 import net.minecraft.entity.Entity;
+
 import techguns.client.models.ModelMultipart;
 import techguns.client.render.TGRenderHelper;
 
 public class ModelSonicShotgun extends ModelMultipart {
+
     public ModelRenderer shape79;
     public ModelRenderer shape79_1;
     public ModelRenderer shape79_2;
@@ -286,12 +288,12 @@ public class ModelSonicShotgun extends ModelMultipart {
         this.setRotation(shape79_2, 0.7853981633974483F, 0.0F, 0.0F);
     }
 
-		
-	@Override
-	public void render(Entity entityIn, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch, float scale, int ammoLeft,
-			float reloadProgress, TransformType transformType, int part, float fireProgress, float chargeProgress) {
-		
-	    this.Shape13_9.render(scale);
+    @Override
+    public void render(Entity entityIn, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw,
+                       float headPitch, float scale, int ammoLeft,
+                       float reloadProgress, TransformType transformType, int part, float fireProgress,
+                       float chargeProgress) {
+        this.Shape13_9.render(scale);
         this.Shape13_1.render(scale);
         this.B1.render(scale);
         this.Shape13_4.render(scale);
@@ -359,5 +361,5 @@ public class ModelSonicShotgun extends ModelMultipart {
         TGRenderHelper.enableFXLighting();
         this.GLOW01.render(scale);
         TGRenderHelper.disableFXLighting();
-	}
+    }
 }

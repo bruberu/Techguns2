@@ -11,27 +11,26 @@ import techguns.tileentities.operation.MetalPressRecipes.MetalPressRecipe;
 
 public class MetalPressJeiRecipe extends BasicRecipeWrapper {
 
-	MetalPressRecipe recipe;
-	
-	public MetalPressJeiRecipe(MetalPressRecipe recipe) {
-		super(recipe);
-		this.recipe=recipe;
-	}
+    MetalPressRecipe recipe;
 
-	@Override
-	protected int getRFperTick() {
-		return MetalPressTileEnt.POWER_PER_TICK;
-	}
-	
-	public static List<MetalPressJeiRecipe> getRecipes(IJeiHelpers helpers) {
-		IStackHelper stackHelper = helpers.getStackHelper();
-	
-		List<MetalPressJeiRecipe> recipes = new ArrayList<MetalPressJeiRecipe>();
-		
-		ArrayList<MetalPressRecipe> m_recipes = MetalPressRecipes.getRecipes();
-		m_recipes.forEach(r -> recipes.add(new MetalPressJeiRecipe(r)));
-		
-		return recipes;
-	}
-	
+    public MetalPressJeiRecipe(MetalPressRecipe recipe) {
+        super(recipe);
+        this.recipe = recipe;
+    }
+
+    @Override
+    protected int getRFperTick() {
+        return MetalPressTileEnt.POWER_PER_TICK;
+    }
+
+    public static List<MetalPressJeiRecipe> getRecipes(IJeiHelpers helpers) {
+        IStackHelper stackHelper = helpers.getStackHelper();
+
+        List<MetalPressJeiRecipe> recipes = new ArrayList<MetalPressJeiRecipe>();
+
+        ArrayList<MetalPressRecipe> m_recipes = MetalPressRecipes.getRecipes();
+        m_recipes.forEach(r -> recipes.add(new MetalPressJeiRecipe(r)));
+
+        return recipes;
+    }
 }

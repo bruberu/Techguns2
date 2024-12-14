@@ -4,65 +4,66 @@ import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.BlockRenderLayer;
 import net.minecraft.util.EnumBlockRenderType;
 import net.minecraft.util.IStringSerializable;
+
 import techguns.api.machines.IMachineType;
 import techguns.tileentities.ExplosiveChargeAdvTileEnt;
 import techguns.tileentities.ExplosiveChargeTileEnt;
 
 public enum EnumExplosiveChargeType implements IStringSerializable, IMachineType {
-	TNT,
-	ADVANCED;
 
-	@Override
-	public String getName() {
-		return name().toLowerCase();
-	}
+    TNT,
+    ADVANCED;
 
-	@Override
-	public int getIndex() {
-		return this.ordinal();
-	}
+    @Override
+    public String getName() {
+        return name().toLowerCase();
+    }
 
-	@Override
-	public int getMaxMachineIndex() {
-		return 1;
-	}
+    @Override
+    public int getIndex() {
+        return this.ordinal();
+    }
 
-	@Override
-	public TileEntity getTile() {
-		if(this==TNT) {
-			return new ExplosiveChargeTileEnt();
-		} else {
-			return new ExplosiveChargeAdvTileEnt();
-		}
-	}
+    @Override
+    public int getMaxMachineIndex() {
+        return 1;
+    }
 
-	@Override
-	public Class getTileClass() {
-		if(this==TNT) {
-			return ExplosiveChargeTileEnt.class;
-		} else {
-			return ExplosiveChargeAdvTileEnt.class;
-		}
-	}
+    @Override
+    public TileEntity getTile() {
+        if (this == TNT) {
+            return new ExplosiveChargeTileEnt();
+        } else {
+            return new ExplosiveChargeAdvTileEnt();
+        }
+    }
 
-	@Override
-	public EnumBlockRenderType getRenderType() {
-		return EnumBlockRenderType.MODEL;
-	}
+    @Override
+    public Class getTileClass() {
+        if (this == TNT) {
+            return ExplosiveChargeTileEnt.class;
+        } else {
+            return ExplosiveChargeAdvTileEnt.class;
+        }
+    }
 
-	@Override
-	public boolean isFullCube() {
-		return false;
-	}
+    @Override
+    public EnumBlockRenderType getRenderType() {
+        return EnumBlockRenderType.MODEL;
+    }
 
-	@Override
-	public BlockRenderLayer getBlockRenderLayer() {
-		return BlockRenderLayer.SOLID;
-	}
+    @Override
+    public boolean isFullCube() {
+        return false;
+    }
 
-	@Override
-	public boolean debugOnly() {
-		return false;
-	}
+    @Override
+    public BlockRenderLayer getBlockRenderLayer() {
+        return BlockRenderLayer.SOLID;
+    }
 
+    @Override
+    public boolean debugOnly() {
+        return false;
+    }
 }

@@ -4,9 +4,11 @@ import net.minecraft.client.model.ModelRenderer;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.block.model.ItemCameraTransforms.TransformType;
 import net.minecraft.entity.Entity;
+
 import techguns.client.models.ModelMultipart;
 
 public class ModelAUG extends ModelMultipart {
+
     public ModelRenderer Barrel;
     public ModelRenderer Receiver03;
     public ModelRenderer Receiver01;
@@ -126,50 +128,48 @@ public class ModelAUG extends ModelMultipart {
         this.setRotation(Foregrip, 0.0F, 0.7853981633974483F, 0.0F);
     }
 
-
-    	
-@Override
-public void render(Entity entityIn, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch, float scale, int ammoLeft,
-		float reloadProgress, TransformType transformType, int part, float fireProgress, float chargeProgress) {
-    	
-    	if(part==0){
-	        this.ScopeMount1.render(scale);
-	        this.Scope03.render(scale);
-	        this.Stock2.render(scale);
-	        this.Scope01.render(scale);
-	        this.Barrel2_1.render(scale);
-	        this.Stock6.render(scale);
-	        this.Trigger02.render(scale);
-	        this.Stock1.render(scale);
-	        this.Grip1.render(scale);
-	        this.Barrel.render(scale);
-	        this.Stock5.render(scale);
-	        this.Barrel2.render(scale);
-	        this.Magazine02.render(scale);
-	        this.Grip3.render(scale);
-	        this.Stock4.render(scale);
-	        this.ScopeMount2.render(scale);
-	        this.Receiver03.render(scale);
-	        this.Stock3.render(scale);
-	        this.Magazine01.render(scale);
-	        this.Receiver01.render(scale);
-	        this.Grip2.render(scale);
-	        this.MagSocket.render(scale);
-	        this.Foregrip.render(scale);
-    	} else {
-    		GlStateManager.pushMatrix();
-			if (fireProgress>0) {
-				float movebolt=0f;
-				if (fireProgress >0.4f) {
-					movebolt = 1.0f-(fireProgress-0.4f)/0.6f;
-				} else {
-					movebolt = fireProgress/0.4f;
-				}
-				GlStateManager.translate(0, 0, movebolt*0.5f);
-			}
-    		this.Bolt.render(scale);
-    		GlStateManager.popMatrix();
-    	}
+    @Override
+    public void render(Entity entityIn, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw,
+                       float headPitch, float scale, int ammoLeft,
+                       float reloadProgress, TransformType transformType, int part, float fireProgress,
+                       float chargeProgress) {
+        if (part == 0) {
+            this.ScopeMount1.render(scale);
+            this.Scope03.render(scale);
+            this.Stock2.render(scale);
+            this.Scope01.render(scale);
+            this.Barrel2_1.render(scale);
+            this.Stock6.render(scale);
+            this.Trigger02.render(scale);
+            this.Stock1.render(scale);
+            this.Grip1.render(scale);
+            this.Barrel.render(scale);
+            this.Stock5.render(scale);
+            this.Barrel2.render(scale);
+            this.Magazine02.render(scale);
+            this.Grip3.render(scale);
+            this.Stock4.render(scale);
+            this.ScopeMount2.render(scale);
+            this.Receiver03.render(scale);
+            this.Stock3.render(scale);
+            this.Magazine01.render(scale);
+            this.Receiver01.render(scale);
+            this.Grip2.render(scale);
+            this.MagSocket.render(scale);
+            this.Foregrip.render(scale);
+        } else {
+            GlStateManager.pushMatrix();
+            if (fireProgress > 0) {
+                float movebolt = 0f;
+                if (fireProgress > 0.4f) {
+                    movebolt = 1.0f - (fireProgress - 0.4f) / 0.6f;
+                } else {
+                    movebolt = fireProgress / 0.4f;
+                }
+                GlStateManager.translate(0, 0, movebolt * 0.5f);
+            }
+            this.Bolt.render(scale);
+            GlStateManager.popMatrix();
+        }
     }
-
 }

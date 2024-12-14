@@ -4,8 +4,7 @@ import net.minecraft.world.World;
 
 public class TGDummySpawn extends GenericNPC {
 
-	public TGDummySpawn(World world) {
-		super(world);
-	}
-
+    public TGDummySpawn(World world) {
+        super(world);
+    }
 }

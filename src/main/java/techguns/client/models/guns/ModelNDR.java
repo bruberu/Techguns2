@@ -1,17 +1,19 @@
 package techguns.client.models.guns;
 
-import org.lwjgl.opengl.GL11;
-
 import net.minecraft.client.model.ModelRenderer;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.block.model.ItemCameraTransforms.TransformType;
 import net.minecraft.entity.Entity;
+
+import org.lwjgl.opengl.GL11;
+
 import techguns.client.models.ModelMultipart;
 import techguns.client.render.TGRenderHelper;
 import techguns.client.render.TGRenderHelper.RenderType;
 import techguns.util.MathUtil;
 
 public class ModelNDR extends ModelMultipart {
+
     public ModelRenderer shape14;
     public ModelRenderer shape15;
     public ModelRenderer shape14_1;
@@ -342,99 +344,98 @@ public class ModelNDR extends ModelMultipart {
         this.shape45_.addChild(this.shape48_2);
     }
 
-    
+    @Override
+    public void render(Entity entityIn, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw,
+                       float headPitch, float scale, int ammoLeft,
+                       float reloadProgress, TransformType transformType, int part, float fireProgress,
+                       float chargeProgress) {
+        this.shape14_1.render(scale);
+        this.shape1_8.render(scale);
+        this.shape14_9.render(scale);
+        this.shape1_2.render(scale);
+        this.sixside.render(scale);
+        this.shape14_3.render(scale);
+        this.shape99.render(scale);
+        this.shape14_6.render(scale);
+        this.shape58.render(scale);
+        this.shape14_5.render(scale);
+        this.shape1_7.render(scale);
+        this.shape14_12.render(scale);
+        this.shape99_2.render(scale);
+        this.shape45_.render(scale);
+        this.shape14_10.render(scale);
+        this.shape58_1.render(scale);
+        this.shape84_6.render(scale);
+        this.shape84_7.render(scale);
+        this.shape1_11.render(scale);
+        this.shape14_8.render(scale);
+        this.shape14_4.render(scale);
+        this.shape84_2.render(scale);
+        this.shape1_1.render(scale);
+        this.shape99_1.render(scale);
+        this.shape15.render(scale);
+        this.sixside_1.render(scale);
+        this.shape84_5.render(scale);
+        this.shape14_11.render(scale);
+        this.shape84_3.render(scale);
+        this.shape1.render(scale);
+        this.shape1_9.render(scale);
+        this.shape14_2.render(scale);
+        this.shape84.render(scale);
+        this.shape1_4.render(scale);
+        this.shape1_10.render(scale);
+        this.shape84_1.render(scale);
+        this.shape84_4.render(scale);
+        this.shape14.render(scale);
+        this.shape1_6.render(scale);
+        this.shape1_3.render(scale);
+        this.shape58_2.render(scale);
+        this.shape14_7.render(scale);
+        this.shape1_5.render(scale);
 
-	@Override
-	public void render(Entity entityIn, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch, float scale, int ammoLeft,
-			float reloadProgress, TransformType transformType, int part, float fireProgress, float chargeProgress) {
-		
-		    this.shape14_1.render(scale);
-	        this.shape1_8.render(scale);
-	        this.shape14_9.render(scale);
-	        this.shape1_2.render(scale);
-	        this.sixside.render(scale);
-	        this.shape14_3.render(scale);
-	        this.shape99.render(scale);
-	        this.shape14_6.render(scale);
-	        this.shape58.render(scale);
-	        this.shape14_5.render(scale);
-	        this.shape1_7.render(scale);
-	        this.shape14_12.render(scale);
-	        this.shape99_2.render(scale);
-	        this.shape45_.render(scale);
-	        this.shape14_10.render(scale);
-	        this.shape58_1.render(scale);
-	        this.shape84_6.render(scale);
-	        this.shape84_7.render(scale);
-	        this.shape1_11.render(scale);
-	        this.shape14_8.render(scale);
-	        this.shape14_4.render(scale);
-	        this.shape84_2.render(scale);
-	        this.shape1_1.render(scale);
-	        this.shape99_1.render(scale);
-	        this.shape15.render(scale);
-	        this.sixside_1.render(scale);
-	        this.shape84_5.render(scale);
-	        this.shape14_11.render(scale);
-	        this.shape84_3.render(scale);
-	        this.shape1.render(scale);
-	        this.shape1_9.render(scale);
-	        this.shape14_2.render(scale);
-	        this.shape84.render(scale);
-	        this.shape1_4.render(scale);
-	        this.shape1_10.render(scale);
-	        this.shape84_1.render(scale);
-	        this.shape84_4.render(scale);
-	        this.shape14.render(scale);
-	        this.shape1_6.render(scale);
-	        this.shape1_3.render(scale);
-	        this.shape58_2.render(scale);
-	        this.shape14_7.render(scale);
-	        this.shape1_5.render(scale);
-	        
-	        //
-	        //System.out.println("FireProgress= "+fireProgress);
-	        
-	        TGRenderHelper.enableBlendMode(RenderType.ALPHA);
-	        this.GLOW.render(scale);
-	        if (fireProgress > 0) {
-	        	
-	        	//GL11.glDisable(GL11.GL_CULL_FACE);
-	        	GlStateManager.disableCull();
-	        	//System.out.println("FireProgress= "+fireProgress);
-		  //      TGRenderHelper.enableAlphaBlend();
-		        //this.glowA1.offsetY = (float) (-6.0f + Math.sin(fireProgress*2.0*Math.PI));
-	
-		        GL11.glPushMatrix();
-		        double s = 0.90 + Math.sin(fireProgress*2.0*Math.PI)*0.1;
-		        GL11.glScaled(s, s, s);
-		        
-		        this.glowA1.render(scale);
-		        this.glowA1.rotateAngleX = 63.0f*((float)MathUtil.D2R);
-		        this.glowA1.render(scale);
-		        this.glowA1.rotateAngleX = 117.0f*((float)MathUtil.D2R);
-		        this.glowA1.render(scale);
-		        this.glowA1.rotateAngleX = 155.0f*((float)MathUtil.D2R);
-		        this.glowA1.render(scale);
-		        this.glowA1.rotateAngleX = -155.0f*((float)MathUtil.D2R);
-		        this.glowA1.render(scale);
-		        this.glowA1.rotateAngleX = -117.0f*((float)MathUtil.D2R);
-		        this.glowA1.render(scale);
-		        this.glowA1.rotateAngleX = -63.0f*((float)MathUtil.D2R);
-		        this.glowA1.render(scale);
-		        this.glowA1.rotateAngleX = -25.0f*((float)MathUtil.D2R);
-		        this.glowA1.render(scale);
-		        this.glowA1.rotateAngleX = 25.0f*((float)MathUtil.D2R);
-		        
-		        GL11.glPopMatrix();
-		        
-		 //       TGRenderHelper.disableAlphaBlend();
-		        
-		        //GL11.glEnable(GL11.GL_CULL_FACE);
-		        GlStateManager.enableCull();
-	        }
-	        
-	        TGRenderHelper.disableBlendMode(RenderType.ALPHA);
-	        //
-	}
+        //
+        // System.out.println("FireProgress= "+fireProgress);
+
+        TGRenderHelper.enableBlendMode(RenderType.ALPHA);
+        this.GLOW.render(scale);
+        if (fireProgress > 0) {
+
+            // GL11.glDisable(GL11.GL_CULL_FACE);
+            GlStateManager.disableCull();
+            // System.out.println("FireProgress= "+fireProgress);
+            // TGRenderHelper.enableAlphaBlend();
+            // this.glowA1.offsetY = (float) (-6.0f + Math.sin(fireProgress*2.0*Math.PI));
+
+            GL11.glPushMatrix();
+            double s = 0.90 + Math.sin(fireProgress * 2.0 * Math.PI) * 0.1;
+            GL11.glScaled(s, s, s);
+
+            this.glowA1.render(scale);
+            this.glowA1.rotateAngleX = 63.0f * ((float) MathUtil.D2R);
+            this.glowA1.render(scale);
+            this.glowA1.rotateAngleX = 117.0f * ((float) MathUtil.D2R);
+            this.glowA1.render(scale);
+            this.glowA1.rotateAngleX = 155.0f * ((float) MathUtil.D2R);
+            this.glowA1.render(scale);
+            this.glowA1.rotateAngleX = -155.0f * ((float) MathUtil.D2R);
+            this.glowA1.render(scale);
+            this.glowA1.rotateAngleX = -117.0f * ((float) MathUtil.D2R);
+            this.glowA1.render(scale);
+            this.glowA1.rotateAngleX = -63.0f * ((float) MathUtil.D2R);
+            this.glowA1.render(scale);
+            this.glowA1.rotateAngleX = -25.0f * ((float) MathUtil.D2R);
+            this.glowA1.render(scale);
+            this.glowA1.rotateAngleX = 25.0f * ((float) MathUtil.D2R);
+
+            GL11.glPopMatrix();
+
+            // TGRenderHelper.disableAlphaBlend();
+
+            // GL11.glEnable(GL11.GL_CULL_FACE);
+            GlStateManager.enableCull();
+        }
+
+        TGRenderHelper.disableBlendMode(RenderType.ALPHA);
+        //
+    }
 }

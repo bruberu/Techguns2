@@ -1,12 +1,13 @@
 package techguns.client.models.guns;
 
-import net.minecraft.client.model.ModelBase;
 import net.minecraft.client.model.ModelRenderer;
 import net.minecraft.client.renderer.block.model.ItemCameraTransforms.TransformType;
 import net.minecraft.entity.Entity;
+
 import techguns.client.models.ModelMultipart;
 
 public class ModelLaserPistol extends ModelMultipart {
+
     public ModelRenderer Barrel1;
     public ModelRenderer Grip1;
     public ModelRenderer Trigger;
@@ -92,11 +93,12 @@ public class ModelLaserPistol extends ModelMultipart {
         this.TopRound.setRotationPoint(-1.0F, -1.8F, 8.5F);
         this.TopRound.addBox(0.0F, 0.0F, 0.0F, 1, 1, 1, 0.0F);
     }
-	@Override
-	public void render(Entity entityIn, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw,
-			float headPitch, float scale, int ammoLeft, float reloadProgress, TransformType transformType, int part,
-			float fireProgress, float chargeProgress) {
 
+    @Override
+    public void render(Entity entityIn, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw,
+                       float headPitch, float scale, int ammoLeft, float reloadProgress, TransformType transformType,
+                       int part,
+                       float fireProgress, float chargeProgress) {
         this.Grip1.render(scale);
         this.grip3.render(scale);
         this.grip2.render(scale);
@@ -117,5 +119,3 @@ public class ModelLaserPistol extends ModelMultipart {
         this.TopRound.render(scale);
     }
 }
-
-

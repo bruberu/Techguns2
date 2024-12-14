@@ -1,31 +1,31 @@
 package techguns.capabilities;
 
 import net.minecraft.entity.EntityLivingBase;
+
 import techguns.deatheffects.EntityDeathUtils.DeathType;
 
 public class TGDeathTypeCap {
 
-	protected EntityLivingBase ent;
-	protected DeathType deathType = DeathType.DEFAULT; 
-	
-	public TGDeathTypeCap(EntityLivingBase ent) {
-		this.ent = ent;
-	}
+    protected EntityLivingBase ent;
+    protected DeathType deathType = DeathType.DEFAULT;
 
-	public EntityLivingBase getEnt() {
-		return ent;
-	}
+    public TGDeathTypeCap(EntityLivingBase ent) {
+        this.ent = ent;
+    }
 
-	public DeathType getDeathType() {
-		return deathType;
-	}
+    public EntityLivingBase getEnt() {
+        return ent;
+    }
 
-	public void setDeathType(DeathType deathType) {
-		this.deathType = deathType;
-	}
+    public DeathType getDeathType() {
+        return deathType;
+    }
 
-	public static TGDeathTypeCap get(EntityLivingBase elb){
-		return (TGDeathTypeCap) elb.getCapability(TGDeathTypeCapProvider.TG_DEATHTYPE_CAP, null);
-	}
-	
+    public void setDeathType(DeathType deathType) {
+        this.deathType = deathType;
+    }
+
+    public static TGDeathTypeCap get(EntityLivingBase elb) {
+        return (TGDeathTypeCap) elb.getCapability(TGDeathTypeCapProvider.TG_DEATHTYPE_CAP, null);
+    }
 }

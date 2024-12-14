@@ -5,6 +5,7 @@ import net.minecraft.client.model.ModelRenderer;
 import net.minecraft.entity.Entity;
 
 public class ModelRiotShield extends ModelBase {
+
     public ModelRenderer Plate;
     public ModelRenderer Handle;
     public ModelRenderer TopBorder;
@@ -36,7 +37,7 @@ public class ModelRiotShield extends ModelBase {
     }
 
     @Override
-    public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) { 
+    public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
         this.BottomBorder.render(f5);
         this.SideBorder1.render(f5);
         this.Plate.render(f5);
@@ -44,5 +45,4 @@ public class ModelRiotShield extends ModelBase {
         this.SideBorder0.render(f5);
         this.TopBorder.render(f5);
     }
-
 }

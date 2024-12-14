@@ -15,86 +15,85 @@ import net.minecraft.util.NonNullList;
 import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+
 import techguns.util.BlockUtils;
 
 public class GenericBlockMetaEnum<T extends Enum<T> & IStringSerializable> extends GenericBlock {
 
-	protected Class<T> clazz;
-	
-	protected BlockStateContainer blockStateOverride;
-	
-	public PropertyEnum<T> TYPE;
-	
-	protected GenericItemBlockMeta itemblock;
-	
-	public GenericBlockMetaEnum(String name, Material mat, Class<T> clazz) {
-		this(name,mat,mat.getMaterialMapColor(),SoundType.STONE, clazz);
-	}
+    protected Class<T> clazz;
 
-	public GenericBlockMetaEnum(String name, Material mat, MapColor mc,  SoundType soundType, Class<T> clazz) {
-		super(name, mat, mc);
-		this.clazz=clazz;
-		TYPE = PropertyEnum.create("type",clazz);
-		this.blockStateOverride = new BlockStateContainer.Builder(this).add(TYPE).build();
-		this.setDefaultState(this.getBlockState().getBaseState());
-		this.setSoundType(soundType);
-	}
+    protected BlockStateContainer blockStateOverride;
 
-	@Override
-	public BlockStateContainer getBlockState() {
-		return this.blockStateOverride;
-	}
-	
-	@Override
-	public int damageDropped(IBlockState state) {
-		return this.getMetaFromState(getDefaultState().withProperty(TYPE, state.getValue(TYPE)));
-	}
-	
-	@Override
-	public void getSubBlocks(CreativeTabs tab, NonNullList<ItemStack> items) {
-		for (T t : clazz.getEnumConstants()) {
-			items.add(new ItemStack(this,1,this.getMetaFromState(getDefaultState().withProperty(TYPE, t))));
-		}
-	}
-	
-	@Override
-	public ItemBlock createItemBlock() {
-		this.itemblock =  new GenericItemBlockMeta(this);
-		return itemblock;
-	}
+    public PropertyEnum<T> TYPE;
 
-	@Override
-	public int getMetaFromState(IBlockState state) {
-		return state.getValue(TYPE).ordinal();
-	}
+    protected GenericItemBlockMeta itemblock;
 
-	@Override
-	public IBlockState getStateFromMeta(int meta) {
-		return this.getDefaultState()
-	    .withProperty(TYPE, clazz.getEnumConstants()[meta]);
+    public GenericBlockMetaEnum(String name, Material mat, Class<T> clazz) {
+        this(name, mat, mat.getMaterialMapColor(), SoundType.STONE, clazz);
     }
-	
-	public Class<T> getClazz() {
-		return clazz;
-	}
 
-	public GenericItemBlockMeta getItemblock() {
-		return itemblock;
-	}
+    public GenericBlockMetaEnum(String name, Material mat, MapColor mc, SoundType soundType, Class<T> clazz) {
+        super(name, mat, mc);
+        this.clazz = clazz;
+        TYPE = PropertyEnum.create("type", clazz);
+        this.blockStateOverride = new BlockStateContainer.Builder(this).add(TYPE).build();
+        this.setDefaultState(this.getBlockState().getBaseState());
+        this.setSoundType(soundType);
+    }
 
-	public boolean shouldAutoGenerateJsonForEnum() {
-		return true;
-	}
-	
-	@SideOnly(Side.CLIENT)
-	@Override
-	public void registerItemBlockModels() {
-		for(int i = 0; i< clazz.getEnumConstants().length;i++) {
-			IBlockState state = getDefaultState().withProperty(TYPE, clazz.getEnumConstants()[i]);
-			ModelLoader.setCustomModelResourceLocation(this.itemblock, this.getMetaFromState(state), new ModelResourceLocation(getRegistryName(),BlockUtils.getBlockStateVariantString(state)));
-		}
-	}
+    @Override
+    public BlockStateContainer getBlockState() {
+        return this.blockStateOverride;
+    }
 
-	
-	
+    @Override
+    public int damageDropped(IBlockState state) {
+        return this.getMetaFromState(getDefaultState().withProperty(TYPE, state.getValue(TYPE)));
+    }
+
+    @Override
+    public void getSubBlocks(CreativeTabs tab, NonNullList<ItemStack> items) {
+        for (T t : clazz.getEnumConstants()) {
+            items.add(new ItemStack(this, 1, this.getMetaFromState(getDefaultState().withProperty(TYPE, t))));
+        }
+    }
+
+    @Override
+    public ItemBlock createItemBlock() {
+        this.itemblock = new GenericItemBlockMeta(this);
+        return itemblock;
+    }
+
+    @Override
+    public int getMetaFromState(IBlockState state) {
+        return state.getValue(TYPE).ordinal();
+    }
+
+    @Override
+    public IBlockState getStateFromMeta(int meta) {
+        return this.getDefaultState()
+                .withProperty(TYPE, clazz.getEnumConstants()[meta]);
+    }
+
+    public Class<T> getClazz() {
+        return clazz;
+    }
+
+    public GenericItemBlockMeta getItemblock() {
+        return itemblock;
+    }
+
+    public boolean shouldAutoGenerateJsonForEnum() {
+        return true;
+    }
+
+    @SideOnly(Side.CLIENT)
+    @Override
+    public void registerItemBlockModels() {
+        for (int i = 0; i < clazz.getEnumConstants().length; i++) {
+            IBlockState state = getDefaultState().withProperty(TYPE, clazz.getEnumConstants()[i]);
+            ModelLoader.setCustomModelResourceLocation(this.itemblock, this.getMetaFromState(state),
+                    new ModelResourceLocation(getRegistryName(), BlockUtils.getBlockStateVariantString(state)));
+        }
+    }
 }
