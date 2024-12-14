@@ -4,13 +4,11 @@ import net.minecraft.client.model.ModelRenderer;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.block.model.ItemCameraTransforms.TransformType;
 import net.minecraft.entity.Entity;
-
 import techguns.client.models.ModelMultipart;
 import techguns.client.render.TGRenderHelper;
 
 public class ModelTFG extends ModelMultipart {
-
-    public ModelRenderer Glow01;
+	public ModelRenderer Glow01;
     public ModelRenderer Glow02;
     public ModelRenderer Glow03;
     public ModelRenderer Mid04;
@@ -462,9 +460,8 @@ public class ModelTFG extends ModelMultipart {
     }
 
     @Override
-    public void render(Entity entityIn, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw,
-                       float headPitch, float scale, int ammoLeft, float reloadProgress,
-                       TransformType transformType, int part, float fireProgress, float chargeProgress) {
+    public void render(Entity entityIn, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch, float scale, int ammoLeft, float reloadProgress,
+    		TransformType transformType, int part, float fireProgress, float chargeProgress) {
         this.Front19.render(scale);
         this.Stock11.render(scale);
         this.Front05.render(scale);
@@ -489,22 +486,22 @@ public class ModelTFG extends ModelMultipart {
         this.Front06.render(scale);
         this.Mid20.render(scale);
         this.Barrel01.render(scale);
-        this.Front17.render(scale);
+        this.Front17.render(scale);       
         this.Front02.render(scale);
-        this.Stock07.render(scale);
+        this.Stock07.render(scale);     
         this.Stock20.render(scale);
         this.Front10.render(scale);
         this.Stock30.render(scale);
         this.Stock17.render(scale);
         this.Mid04.render(scale);
-        this.Front07.render(scale);
+        this.Front07.render(scale);       
         this.Mid05.render(scale);
         this.Stock12.render(scale);
         this.Front22.render(scale);
         this.Front18.render(scale);
         this.Stock13.render(scale);
-        this.Barrel03.render(scale);
-        this.Stock06.render(scale);
+        this.Barrel03.render(scale);       
+        this.Stock06.render(scale); 
         this.Front03.render(scale);
         this.Front20.render(scale);
         this.Front12.render(scale);
@@ -536,7 +533,7 @@ public class ModelTFG extends ModelMultipart {
         this.Mid13.render(scale);
         this.Barrel02.render(scale);
         this.Front16.render(scale);
-        this.Stock04.render(scale);
+        this.Stock04.render(scale);      
         this.Mid12.render(scale);
         this.Stock15.render(scale);
         this.Stock01.render(scale);
@@ -544,76 +541,82 @@ public class ModelTFG extends ModelMultipart {
         this.Stock05.render(scale);
         this.Stock19.render(scale);
         this.Front08.render(scale);
-        this.Mid10.render(scale);
+        this.Mid10.render(scale);    
+        
+//        if (fireProgress > 0 && chargeProgress > 0.0) {
+//        	chargeProgress = 1f-Math.min((1f-chargeProgress)*5.0f, 1.0f);
+//        }
+        
+        float f1 = 1f-Math.min(0.1f, chargeProgress) * 10.0f;
+        float f2 = 1f-Math.max(0.1f, Math.min(1.0f, (chargeProgress-0.1f) * 10.0f));
+        
+      
+        
+        f1*=scale;
+        f2*=scale;
 
-        // if (fireProgress > 0 && chargeProgress > 0.0) {
-        // chargeProgress = 1f-Math.min((1f-chargeProgress)*5.0f, 1.0f);
-        // }
-
-        float f1 = 1f - Math.min(0.1f, chargeProgress) * 10.0f;
-        float f2 = 1f - Math.max(0.1f, Math.min(1.0f, (chargeProgress - 0.1f) * 10.0f));
-
-        f1 *= scale;
-        f2 *= scale;
-
-        // 1.0 up/down, 2.0 left/right
-        GlStateManager.pushMatrix();
-        GlStateManager.translate(0.0f, 0, 2.0f * f1);
+		//1.0 up/down, 2.0 left/right
+        GlStateManager.pushMatrix();   
+        GlStateManager.translate(0.0f, 0 , 2.0f * f1);       
         this.R01.render(scale);
         this.R02.render(scale);
         TGRenderHelper.enableFXLighting();
         this.R03.render(scale);
         TGRenderHelper.disableFXLighting();
-
+        
         GlStateManager.pushMatrix();
-        GlStateManager.translate(0.0f, -1.0f * f2, 0);
+        GlStateManager.translate(0.0f, -1.0f * f2 , 0);       
         this.RL01.render(scale);
         this.RL02.render(scale);
         this.RL03.render(scale);
         this.RL05.render(scale);
         GlStateManager.popMatrix();
-
+        
         GlStateManager.pushMatrix();
-        GlStateManager.translate(0.0f, 1.0f * f2, 0);
+        GlStateManager.translate(0.0f, 1.0f * f2 , 0);   
         this.RU01.render(scale);
         this.RU02.render(scale);
         this.RU03.render(scale);
         this.RU04.render(scale);
-        GlStateManager.popMatrix();
-
-        GlStateManager.popMatrix();
-
-        GlStateManager.pushMatrix();
-        GlStateManager.translate(0.0f, 0, -2.0f * f1);
+        GlStateManager.popMatrix();   
+        
+		GlStateManager.popMatrix();
+        
+		
+		GlStateManager.pushMatrix();   
+	    GlStateManager.translate(0.0f, 0 , -2.0f * f1);       
         this.L01.render(scale);
         this.L02.render(scale);
         TGRenderHelper.enableFXLighting();
         this.L03.render(scale);
         TGRenderHelper.disableFXLighting();
-
+        
         GlStateManager.pushMatrix();
-        GlStateManager.translate(0.0f, -1.0f * f2, 0);
+        GlStateManager.translate(0.0f, -1.0f * f2 , 0);       
         this.LL01.render(scale);
         this.LL02.render(scale);
         this.LL03.render(scale);
         this.LL04.render(scale);
         GlStateManager.popMatrix();
-
+        
         GlStateManager.pushMatrix();
-        GlStateManager.translate(0.0f, 1.0f * f2, 0);
+        GlStateManager.translate(0.0f, 1.0f * f2 , 0);           
         this.LU01.render(scale);
         this.LU02.render(scale);
         this.LU03.render(scale);
         this.LU04.render(scale);
         GlStateManager.popMatrix();
-
+        
         GlStateManager.popMatrix();
-
+        
         TGRenderHelper.enableFXLighting();
         this.Glow02.render(scale);
         this.Glow01.render(scale);
         this.Glow03.render(scale);
         this.Glow_Barrel.render(scale);
         TGRenderHelper.disableFXLighting();
-    }
+
+  }
+ 
 }
+

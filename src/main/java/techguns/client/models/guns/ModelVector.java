@@ -4,7 +4,6 @@ import net.minecraft.client.model.ModelRenderer;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.block.model.ItemCameraTransforms.TransformType;
 import net.minecraft.entity.Entity;
-
 import techguns.client.models.ModelMultipart;
 
 public class ModelVector extends ModelMultipart {
@@ -141,53 +140,44 @@ public class ModelVector extends ModelMultipart {
         this.setRotation(Trigger02, -0.17453292519943295F, -0.0F, 0.0F);
     }
 
-    @Override
-    public void render(Entity entityIn, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw,
-                       float headPitch, float scale, int ammoLeft,
-                       float reloadProgress, TransformType transformType, int part, float fireProgress,
-                       float chargeProgress) {
+	@Override
+	public void render(Entity entityIn, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch, float scale, int ammoLeft,
+			float reloadProgress, TransformType transformType, int part, float fireProgress, float chargeProgress) {
+
         this.stock03.render(scale);
         this.Receiver04.render(scale);
         GlStateManager.pushMatrix();
         GlStateManager.translate(this.Eotech03.offsetX, this.Eotech03.offsetY, this.Eotech03.offsetZ);
-        GlStateManager.translate(this.Eotech03.rotationPointX * scale, this.Eotech03.rotationPointY * scale,
-                this.Eotech03.rotationPointZ * scale);
+        GlStateManager.translate(this.Eotech03.rotationPointX * scale, this.Eotech03.rotationPointY * scale, this.Eotech03.rotationPointZ * scale);
         GlStateManager.scale(0.8D, 0.8D, 0.8D);
         GlStateManager.translate(-this.Eotech03.offsetX, -this.Eotech03.offsetY, -this.Eotech03.offsetZ);
-        GlStateManager.translate(-this.Eotech03.rotationPointX * scale, -this.Eotech03.rotationPointY * scale,
-                -this.Eotech03.rotationPointZ * scale);
+        GlStateManager.translate(-this.Eotech03.rotationPointX * scale, -this.Eotech03.rotationPointY * scale, -this.Eotech03.rotationPointZ * scale);
         this.Eotech03.render(scale);
         GlStateManager.popMatrix();
         this.stock.render(scale);
         GlStateManager.pushMatrix();
         GlStateManager.translate(this.Receiver03.offsetX, this.Receiver03.offsetY, this.Receiver03.offsetZ);
-        GlStateManager.translate(this.Receiver03.rotationPointX * scale, this.Receiver03.rotationPointY * scale,
-                this.Receiver03.rotationPointZ * scale);
+        GlStateManager.translate(this.Receiver03.rotationPointX * scale, this.Receiver03.rotationPointY * scale, this.Receiver03.rotationPointZ * scale);
         GlStateManager.scale(0.8D, 1.0D, 1.0D);
         GlStateManager.translate(-this.Receiver03.offsetX, -this.Receiver03.offsetY, -this.Receiver03.offsetZ);
-        GlStateManager.translate(-this.Receiver03.rotationPointX * scale, -this.Receiver03.rotationPointY * scale,
-                -this.Receiver03.rotationPointZ * scale);
+        GlStateManager.translate(-this.Receiver03.rotationPointX * scale, -this.Receiver03.rotationPointY * scale, -this.Receiver03.rotationPointZ * scale);
         this.Receiver03.render(scale);
         GlStateManager.popMatrix();
         GlStateManager.pushMatrix();
         GlStateManager.translate(this.Eotech02.offsetX, this.Eotech02.offsetY, this.Eotech02.offsetZ);
-        GlStateManager.translate(this.Eotech02.rotationPointX * scale, this.Eotech02.rotationPointY * scale,
-                this.Eotech02.rotationPointZ * scale);
+        GlStateManager.translate(this.Eotech02.rotationPointX * scale, this.Eotech02.rotationPointY * scale, this.Eotech02.rotationPointZ * scale);
         GlStateManager.scale(0.8D, 0.8D, 0.8D);
         GlStateManager.translate(-this.Eotech02.offsetX, -this.Eotech02.offsetY, -this.Eotech02.offsetZ);
-        GlStateManager.translate(-this.Eotech02.rotationPointX * scale, -this.Eotech02.rotationPointY * scale,
-                -this.Eotech02.rotationPointZ * scale);
+        GlStateManager.translate(-this.Eotech02.rotationPointX * scale, -this.Eotech02.rotationPointY * scale, -this.Eotech02.rotationPointZ * scale);
         this.Eotech02.render(scale);
         GlStateManager.popMatrix();
         this.stock04.render(scale);
         GlStateManager.pushMatrix();
         GlStateManager.translate(this.Barrel02.offsetX, this.Barrel02.offsetY, this.Barrel02.offsetZ);
-        GlStateManager.translate(this.Barrel02.rotationPointX * scale, this.Barrel02.rotationPointY * scale,
-                this.Barrel02.rotationPointZ * scale);
+        GlStateManager.translate(this.Barrel02.rotationPointX * scale, this.Barrel02.rotationPointY * scale, this.Barrel02.rotationPointZ * scale);
         GlStateManager.scale(0.7D, 0.7D, 1.0D);
         GlStateManager.translate(-this.Barrel02.offsetX, -this.Barrel02.offsetY, -this.Barrel02.offsetZ);
-        GlStateManager.translate(-this.Barrel02.rotationPointX * scale, -this.Barrel02.rotationPointY * scale,
-                -this.Barrel02.rotationPointZ * scale);
+        GlStateManager.translate(-this.Barrel02.rotationPointX * scale, -this.Barrel02.rotationPointY * scale, -this.Barrel02.rotationPointZ * scale);
         this.Barrel02.render(scale);
         GlStateManager.popMatrix();
         this.FrontRails01.render(scale);
@@ -195,22 +185,18 @@ public class ModelVector extends ModelMultipart {
         this.Bottom.render(scale);
         GlStateManager.pushMatrix();
         GlStateManager.translate(this.Magazine.offsetX, this.Magazine.offsetY, this.Magazine.offsetZ);
-        GlStateManager.translate(this.Magazine.rotationPointX * scale, this.Magazine.rotationPointY * scale,
-                this.Magazine.rotationPointZ * scale);
+        GlStateManager.translate(this.Magazine.rotationPointX * scale, this.Magazine.rotationPointY * scale, this.Magazine.rotationPointZ * scale);
         GlStateManager.scale(0.99D, 1.0D, 1.0D);
         GlStateManager.translate(-this.Magazine.offsetX, -this.Magazine.offsetY, -this.Magazine.offsetZ);
-        GlStateManager.translate(-this.Magazine.rotationPointX * scale, -this.Magazine.rotationPointY * scale,
-                -this.Magazine.rotationPointZ * scale);
+        GlStateManager.translate(-this.Magazine.rotationPointX * scale, -this.Magazine.rotationPointY * scale, -this.Magazine.rotationPointZ * scale);
         this.Magazine.render(scale);
         GlStateManager.popMatrix();
         GlStateManager.pushMatrix();
         GlStateManager.translate(this.Receiver05.offsetX, this.Receiver05.offsetY, this.Receiver05.offsetZ);
-        GlStateManager.translate(this.Receiver05.rotationPointX * scale, this.Receiver05.rotationPointY * scale,
-                this.Receiver05.rotationPointZ * scale);
+        GlStateManager.translate(this.Receiver05.rotationPointX * scale, this.Receiver05.rotationPointY * scale, this.Receiver05.rotationPointZ * scale);
         GlStateManager.scale(0.98D, 1.0D, 1.0D);
         GlStateManager.translate(-this.Receiver05.offsetX, -this.Receiver05.offsetY, -this.Receiver05.offsetZ);
-        GlStateManager.translate(-this.Receiver05.rotationPointX * scale, -this.Receiver05.rotationPointY * scale,
-                -this.Receiver05.rotationPointZ * scale);
+        GlStateManager.translate(-this.Receiver05.rotationPointX * scale, -this.Receiver05.rotationPointY * scale, -this.Receiver05.rotationPointZ * scale);
         this.Receiver05.render(scale);
         GlStateManager.popMatrix();
         this.Barrel.render(scale);
@@ -221,66 +207,55 @@ public class ModelVector extends ModelMultipart {
         this.Grip01.render(scale);
         GlStateManager.pushMatrix();
         GlStateManager.translate(this.Eotech01.offsetX, this.Eotech01.offsetY, this.Eotech01.offsetZ);
-        GlStateManager.translate(this.Eotech01.rotationPointX * scale, this.Eotech01.rotationPointY * scale,
-                this.Eotech01.rotationPointZ * scale);
+        GlStateManager.translate(this.Eotech01.rotationPointX * scale, this.Eotech01.rotationPointY * scale, this.Eotech01.rotationPointZ * scale);
         GlStateManager.scale(0.8D, 0.8D, 0.8D);
         GlStateManager.translate(-this.Eotech01.offsetX, -this.Eotech01.offsetY, -this.Eotech01.offsetZ);
-        GlStateManager.translate(-this.Eotech01.rotationPointX * scale, -this.Eotech01.rotationPointY * scale,
-                -this.Eotech01.rotationPointZ * scale);
+        GlStateManager.translate(-this.Eotech01.rotationPointX * scale, -this.Eotech01.rotationPointY * scale, -this.Eotech01.rotationPointZ * scale);
         this.Eotech01.render(scale);
         GlStateManager.popMatrix();
         this.stock02.render(scale);
         this.stock05.render(scale);
         GlStateManager.pushMatrix();
         GlStateManager.translate(this.Receiver02.offsetX, this.Receiver02.offsetY, this.Receiver02.offsetZ);
-        GlStateManager.translate(this.Receiver02.rotationPointX * scale, this.Receiver02.rotationPointY * scale,
-                this.Receiver02.rotationPointZ * scale);
+        GlStateManager.translate(this.Receiver02.rotationPointX * scale, this.Receiver02.rotationPointY * scale, this.Receiver02.rotationPointZ * scale);
         GlStateManager.scale(0.99D, 1.0D, 1.0D);
         GlStateManager.translate(-this.Receiver02.offsetX, -this.Receiver02.offsetY, -this.Receiver02.offsetZ);
-        GlStateManager.translate(-this.Receiver02.rotationPointX * scale, -this.Receiver02.rotationPointY * scale,
-                -this.Receiver02.rotationPointZ * scale);
+        GlStateManager.translate(-this.Receiver02.rotationPointX * scale, -this.Receiver02.rotationPointY * scale, -this.Receiver02.rotationPointZ * scale);
         this.Receiver02.render(scale);
         GlStateManager.popMatrix();
         GlStateManager.pushMatrix();
         GlStateManager.translate(this.stock06.offsetX, this.stock06.offsetY, this.stock06.offsetZ);
-        GlStateManager.translate(this.stock06.rotationPointX * scale, this.stock06.rotationPointY * scale,
-                this.stock06.rotationPointZ * scale);
+        GlStateManager.translate(this.stock06.rotationPointX * scale, this.stock06.rotationPointY * scale, this.stock06.rotationPointZ * scale);
         GlStateManager.scale(0.99D, 1.0D, 1.0D);
         GlStateManager.translate(-this.stock06.offsetX, -this.stock06.offsetY, -this.stock06.offsetZ);
-        GlStateManager.translate(-this.stock06.rotationPointX * scale, -this.stock06.rotationPointY * scale,
-                -this.stock06.rotationPointZ * scale);
+        GlStateManager.translate(-this.stock06.rotationPointX * scale, -this.stock06.rotationPointY * scale, -this.stock06.rotationPointZ * scale);
         this.stock06.render(scale);
         GlStateManager.popMatrix();
         GlStateManager.pushMatrix();
         GlStateManager.translate(this.Eotech04.offsetX, this.Eotech04.offsetY, this.Eotech04.offsetZ);
-        GlStateManager.translate(this.Eotech04.rotationPointX * scale, this.Eotech04.rotationPointY * scale,
-                this.Eotech04.rotationPointZ * scale);
+        GlStateManager.translate(this.Eotech04.rotationPointX * scale, this.Eotech04.rotationPointY * scale, this.Eotech04.rotationPointZ * scale);
         GlStateManager.scale(0.8D, 0.8D, 0.8D);
         GlStateManager.translate(-this.Eotech04.offsetX, -this.Eotech04.offsetY, -this.Eotech04.offsetZ);
-        GlStateManager.translate(-this.Eotech04.rotationPointX * scale, -this.Eotech04.rotationPointY * scale,
-                -this.Eotech04.rotationPointZ * scale);
+        GlStateManager.translate(-this.Eotech04.rotationPointX * scale, -this.Eotech04.rotationPointY * scale, -this.Eotech04.rotationPointZ * scale);
         this.Eotech04.render(scale);
         GlStateManager.popMatrix();
         GlStateManager.pushMatrix();
         GlStateManager.translate(this.Receiver03_1.offsetX, this.Receiver03_1.offsetY, this.Receiver03_1.offsetZ);
-        GlStateManager.translate(this.Receiver03_1.rotationPointX * scale, this.Receiver03_1.rotationPointY * scale,
-                this.Receiver03_1.rotationPointZ * scale);
+        GlStateManager.translate(this.Receiver03_1.rotationPointX * scale, this.Receiver03_1.rotationPointY * scale, this.Receiver03_1.rotationPointZ * scale);
         GlStateManager.scale(0.99D, 1.0D, 1.0D);
         GlStateManager.translate(-this.Receiver03_1.offsetX, -this.Receiver03_1.offsetY, -this.Receiver03_1.offsetZ);
-        GlStateManager.translate(-this.Receiver03_1.rotationPointX * scale, -this.Receiver03_1.rotationPointY * scale,
-                -this.Receiver03_1.rotationPointZ * scale);
+        GlStateManager.translate(-this.Receiver03_1.rotationPointX * scale, -this.Receiver03_1.rotationPointY * scale, -this.Receiver03_1.rotationPointZ * scale);
         this.Receiver03_1.render(scale);
         GlStateManager.popMatrix();
         GlStateManager.pushMatrix();
         GlStateManager.translate(this.Grip03.offsetX, this.Grip03.offsetY, this.Grip03.offsetZ);
-        GlStateManager.translate(this.Grip03.rotationPointX * scale, this.Grip03.rotationPointY * scale,
-                this.Grip03.rotationPointZ * scale);
+        GlStateManager.translate(this.Grip03.rotationPointX * scale, this.Grip03.rotationPointY * scale, this.Grip03.rotationPointZ * scale);
         GlStateManager.scale(0.99D, 1.0D, 1.0D);
         GlStateManager.translate(-this.Grip03.offsetX, -this.Grip03.offsetY, -this.Grip03.offsetZ);
-        GlStateManager.translate(-this.Grip03.rotationPointX * scale, -this.Grip03.rotationPointY * scale,
-                -this.Grip03.rotationPointZ * scale);
+        GlStateManager.translate(-this.Grip03.rotationPointX * scale, -this.Grip03.rotationPointY * scale, -this.Grip03.rotationPointZ * scale);
         this.Grip03.render(scale);
         GlStateManager.popMatrix();
         this.Trigger02.render(scale);
     }
+
 }

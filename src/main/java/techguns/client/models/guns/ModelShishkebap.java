@@ -1,14 +1,13 @@
 package techguns.client.models.guns;
 
+import net.minecraft.client.model.ModelBase;
 import net.minecraft.client.model.ModelRenderer;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.block.model.ItemCameraTransforms.TransformType;
 import net.minecraft.entity.Entity;
-
 import techguns.client.models.ModelMultipart;
 
 public class ModelShishkebap extends ModelMultipart {
-
     public ModelRenderer igniter;
     public ModelRenderer valve;
     public ModelRenderer Grip1;
@@ -120,32 +119,27 @@ public class ModelShishkebap extends ModelMultipart {
     }
 
     @Override
-    public void render(Entity entityIn, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw,
-                       float headPitch, float f5, int ammoLeft, float reloadProgress, TransformType transformType,
-                       int part,
-                       float fireProgress, float chargeProgress) {
+	public void render(Entity entityIn, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw,
+			float headPitch, float f5, int ammoLeft, float reloadProgress, TransformType transformType, int part,
+			float fireProgress, float chargeProgress) {
         this.Grip3.render(f5);
         this.igniter.render(f5);
         this.Grip2.render(f5);
         GlStateManager.pushMatrix();
         GlStateManager.translate(this.bladetop1.offsetX, this.bladetop1.offsetY, this.bladetop1.offsetZ);
-        GlStateManager.translate(this.bladetop1.rotationPointX * f5, this.bladetop1.rotationPointY * f5,
-                this.bladetop1.rotationPointZ * f5);
+        GlStateManager.translate(this.bladetop1.rotationPointX * f5, this.bladetop1.rotationPointY * f5, this.bladetop1.rotationPointZ * f5);
         GlStateManager.scale(0.9D, 1.0D, 1.0D);
         GlStateManager.translate(-this.bladetop1.offsetX, -this.bladetop1.offsetY, -this.bladetop1.offsetZ);
-        GlStateManager.translate(-this.bladetop1.rotationPointX * f5, -this.bladetop1.rotationPointY * f5,
-                -this.bladetop1.rotationPointZ * f5);
+        GlStateManager.translate(-this.bladetop1.rotationPointX * f5, -this.bladetop1.rotationPointY * f5, -this.bladetop1.rotationPointZ * f5);
         this.bladetop1.render(f5);
         GlStateManager.popMatrix();
         this.valve.render(f5);
         GlStateManager.pushMatrix();
         GlStateManager.translate(this.bladetop2.offsetX, this.bladetop2.offsetY, this.bladetop2.offsetZ);
-        GlStateManager.translate(this.bladetop2.rotationPointX * f5, this.bladetop2.rotationPointY * f5,
-                this.bladetop2.rotationPointZ * f5);
+        GlStateManager.translate(this.bladetop2.rotationPointX * f5, this.bladetop2.rotationPointY * f5, this.bladetop2.rotationPointZ * f5);
         GlStateManager.scale(0.7D, 1.0D, 0.7D);
         GlStateManager.translate(-this.bladetop2.offsetX, -this.bladetop2.offsetY, -this.bladetop2.offsetZ);
-        GlStateManager.translate(-this.bladetop2.rotationPointX * f5, -this.bladetop2.rotationPointY * f5,
-                -this.bladetop2.rotationPointZ * f5);
+        GlStateManager.translate(-this.bladetop2.rotationPointX * f5, -this.bladetop2.rotationPointY * f5, -this.bladetop2.rotationPointZ * f5);
         this.bladetop2.render(f5);
         GlStateManager.popMatrix();
         this.tank1.render(f5);
@@ -156,12 +150,10 @@ public class ModelShishkebap extends ModelMultipart {
         this.bladetop0.render(f5);
         GlStateManager.pushMatrix();
         GlStateManager.translate(this.bladetop3.offsetX, this.bladetop3.offsetY, this.bladetop3.offsetZ);
-        GlStateManager.translate(this.bladetop3.rotationPointX * f5, this.bladetop3.rotationPointY * f5,
-                this.bladetop3.rotationPointZ * f5);
+        GlStateManager.translate(this.bladetop3.rotationPointX * f5, this.bladetop3.rotationPointY * f5, this.bladetop3.rotationPointZ * f5);
         GlStateManager.scale(0.95D, 1.0D, 1.0D);
         GlStateManager.translate(-this.bladetop3.offsetX, -this.bladetop3.offsetY, -this.bladetop3.offsetZ);
-        GlStateManager.translate(-this.bladetop3.rotationPointX * f5, -this.bladetop3.rotationPointY * f5,
-                -this.bladetop3.rotationPointZ * f5);
+        GlStateManager.translate(-this.bladetop3.rotationPointX * f5, -this.bladetop3.rotationPointY * f5, -this.bladetop3.rotationPointZ * f5);
         this.bladetop3.render(f5);
         GlStateManager.popMatrix();
         this.tube0.render(f5);
@@ -169,12 +161,10 @@ public class ModelShishkebap extends ModelMultipart {
         this.tube3.render(f5);
         GlStateManager.pushMatrix();
         GlStateManager.translate(this.blade2.offsetX, this.blade2.offsetY, this.blade2.offsetZ);
-        GlStateManager.translate(this.blade2.rotationPointX * f5, this.blade2.rotationPointY * f5,
-                this.blade2.rotationPointZ * f5);
+        GlStateManager.translate(this.blade2.rotationPointX * f5, this.blade2.rotationPointY * f5, this.blade2.rotationPointZ * f5);
         GlStateManager.scale(0.7D, 1.0D, 0.7D);
         GlStateManager.translate(-this.blade2.offsetX, -this.blade2.offsetY, -this.blade2.offsetZ);
-        GlStateManager.translate(-this.blade2.rotationPointX * f5, -this.blade2.rotationPointY * f5,
-                -this.blade2.rotationPointZ * f5);
+        GlStateManager.translate(-this.blade2.rotationPointX * f5, -this.blade2.rotationPointY * f5, -this.blade2.rotationPointZ * f5);
         this.blade2.render(f5);
         GlStateManager.popMatrix();
         this.Handle.render(f5);

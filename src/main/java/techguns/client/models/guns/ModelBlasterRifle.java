@@ -3,11 +3,9 @@ package techguns.client.models.guns;
 import net.minecraft.client.model.ModelRenderer;
 import net.minecraft.client.renderer.block.model.ItemCameraTransforms.TransformType;
 import net.minecraft.entity.Entity;
-
 import techguns.client.models.ModelMultipart;
 
 public class ModelBlasterRifle extends ModelMultipart {
-
     public ModelRenderer Grip1;
     public ModelRenderer Trigger01;
     public ModelRenderer Trigger02;
@@ -119,11 +117,10 @@ public class ModelBlasterRifle extends ModelMultipart {
         this.setRotation(scope03, 0.0F, 0.0F, 0.7853981633974483F);
     }
 
-    @Override
-    public void render(Entity entityIn, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw,
-                       float headPitch, float scale, int ammoLeft,
-                       float reloadProgress, TransformType transformType, int part, float fireProgress,
-                       float chargeProgress) {
+	@Override
+	public void render(Entity entityIn, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch, float scale, int ammoLeft,
+			float reloadProgress, TransformType transformType, int part, float fireProgress, float chargeProgress) {
+
         this.Magazine.render(scale);
         this.Receiver01_1.render(scale);
         this.SideBox01.render(scale);
@@ -148,4 +145,5 @@ public class ModelBlasterRifle extends ModelMultipart {
         this.Receiver01.render(scale);
         this.scope03.render(scale);
     }
+
 }
